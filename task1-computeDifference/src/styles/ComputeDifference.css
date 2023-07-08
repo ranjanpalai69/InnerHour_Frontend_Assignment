@@ -1,0 +1,175 @@
+.container {
+    max-width: 650px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fade-in 0.5s ease;
+    border: 1px solid transparent;
+    transition: border-color 0.3s ease;
+  }
+  
+  .container:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+      rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    animation: move-up 0.5s ease;
+  }
+  
+  @keyframes move-up {
+    from {
+      transform: translateY(20px);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+  .input-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    border: 1px solid transparent;
+    transition: border-color 0.3s ease;
+  }
+  
+  .list-input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    resize: vertical;
+    animation: border-color 1s infinite alternate;
+  }
+  
+  @keyframes border-color {
+    from {
+      border-color: #ff6347;
+    }
+    to {
+      border-color: #40e0d0;
+    }
+  }
+  
+  .list-input:hover {
+    animation: none;
+    border-color: #40e0d0;
+  }
+  
+  .compute-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #4caf50;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .compute-button::before {
+    padding-top: 10px;
+    content: "Type enter after adding item to a list, then Compute";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #ff6347;
+    transition: transform 0.3s ease;
+  }
+  
+  .compute-button:hover::before {
+    transform: translateX(100%);
+  }
+  
+  .compute-button:hover {
+    background-color: #45a049;
+  }
+  
+  .compute-button::after,
+  .list-input::after {
+    content: attr(data-hover);
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  
+  .compute-button:hover::after,
+  .list-input:hover::after {
+    opacity: 1;
+  }
+  
+  .results-container {
+    margin-top: 20px;
+    animation: slide-up 0.5s ease;
+  }
+  
+  @keyframes slide-up {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .result-section {
+    margin-bottom: 20px;
+  }
+  
+  .result-section h3 {
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .result-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .result-section ul li {
+    padding: 5px;
+    margin-bottom: 5px;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .result-section ul li:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
